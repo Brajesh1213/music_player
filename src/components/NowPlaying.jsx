@@ -85,8 +85,8 @@ const NowPlaying = ({ song, songs, setCurrentSong }) => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 bg-red-600 w-80 max-w-full rounded-lg p-2 sm:p-4 shadow-lg overflow-hidden">
-      <div className="w-full flex justify-center items-center text-sm px-3 py-1 font-bold mb-2">
+<div className=" bottom-4 bg-red-600 w-auto sm:w-auto max-w-xs sm:max-w-sm lg:max-w-md rounded-lg p-2 sm:p-4 shadow-lg overflow-hidden">
+<div className="w-full flex justify-center items-center text-sm px-3 py-1 font-bold mb-2">
         <span className="text-md font-bold">Now Playing</span>
       </div>
       <div className="w-full">

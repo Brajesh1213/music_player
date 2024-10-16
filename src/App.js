@@ -11,43 +11,40 @@ function App() {
   const [songList, setSongList] = useState(songs);
 
   return (
-    <div className="grid grid-cols-8  md:grid-cols-8 sm:grid-cols-8 gap-1 h-screen bg-gradient-to-r from-red-700 to-black text-gray-200">
+    <div className="flex flex-col md:flex-row h-screen bg-gradient-to-r from-red-700 to-black text-gray-200">
       {/* Sidebar */}
-      <div className="bg-black text-white col-span-2  md:col-span-2 sm:col-span-1 ">
+      <div className="bg-black text-white w-full md:w-1/4">
         <Sidebar1 />
       </div>
 
-      {/* Main Content */}        
-      
+      {/* Main Content with Header */}
+      <div className="flex flex-col flex-grow bg-gray-800">
+        {/* Header spans the full width of MainContent and NowPlaying */}
+        <Header />
 
-      <div className="bg-gray-800 text-gray-200 col-span-6  sm:col-span-6 md:col-span-6 grid grid-cols-6 md:grid-cols-6 sm:grid-cols-6">
-
-
+        <div className="flex flex-col md:flex-row flex-grow">
           {/* Main Content Area */}
-          <div className=" col-span-4 md:col-span-4 sm:col-span-3  ">
-          <Header />
-
-            <MainContent 
-              songs={songList} 
-              setSongs={setSongList} 
-              setCurrentSong={setCurrentSong} 
+          <div className="flex-1 p-4">
+            <MainContent
+              songs={songList}
+              setSongs={setSongList}
+              setCurrentSong={setCurrentSong}
               currentSong={currentSong}
             />
           </div>
 
-          {/* Now Playing Section - Last 2 Columns */}
-          <div className="col-span-2 md:col-span-2  sm:col-span-4 flex items-end justify-end flex-row md:justify-center sm:justify-center">
-          {/* Content goes here */}
-{/* </div> */}
+          {/* Now Playing Section */}
+          <div className="w-full md:w-1/4 flex items-end justify-center p-4">
             {currentSong && (
-              <NowPlaying 
-                song={currentSong} 
-                songs={songList} 
+              <NowPlaying
+                song={currentSong}
+                songs={songList}
                 setCurrentSong={setCurrentSong}
               />
             )}
           </div>
         </div>
+      </div>
     </div>
   );
 }

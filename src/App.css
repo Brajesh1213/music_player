@@ -23,7 +23,7 @@ body {
 
 /* Main content area */
 .main-content {
-  background-color: #1c1c1e; /* Dark gray */
+  background-color: #1b1b21; /* Dark gray */
   color: #ccc;  /* Light gray text */
   flex-grow: 1;
   overflow-y: auto;
